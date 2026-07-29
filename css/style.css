@@ -414,7 +414,7 @@
     .wrap,.hero-inner{padding:0 20px;}
     .nav{padding:10px 20px;gap:5px;}
     .nav-cta{gap:5px;}
-    .nav-cta .btn-gold{padding:5px 5px;font-size:10px; display: none;}
+    .nav-cta .btn-gold{padding:5px 5px;font-size:10px;}
     .brand img{height:30px;}
     .stat-grid{grid-template-columns:1fr;}
     .speaker-grid{grid-template-columns:1fr;}
