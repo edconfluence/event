@@ -344,7 +344,7 @@
   .opp-card a{font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#FFFFFF;display:inline-flex;gap:8px;align-items:center;}
 
   /* ===== FAQ ===== */
-  .faq-list{border-top:1px solid var(--line-onpaper);max-width:780px;}
+  .faq-list{border-top:1px solid var(--line-onpaper);max-width:1000px;}
   .faq-item{border-bottom:1px solid var(--line-onpaper);}
   .faq-q{
     width:100%;text-align:left;background:none;border:none;cursor:pointer;
