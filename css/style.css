@@ -213,7 +213,7 @@
   /* ===== AGENDA ===== */
   .agenda-list{border-top:1px solid var(--line-onpaper);}
   .agenda-row{
-    display:grid;grid-template-columns:100px 250px 1fr;gap:24px;align-items:start;
+    display:grid;grid-template-columns:150px 600px 1fr;gap:24px;align-items:start;
     padding:26px 0;border-bottom:1px solid var(--line-onpaper);
   }
   .agenda-period{font-family:var(--font-mono);font-size:12px;color:var(--ink);letter-spacing:.04em;}
@@ -428,4 +428,88 @@
     .hero h1{font-size:clamp(28px,9vw,40px);}
     .hero-chip{font-size:11px;padding:6px 12px;}
   }
-	
+	  
+	  
+ .gallery{padding:96px 0;}
+    .gallery .wrap{max-width:var(--maxw, 1180px);margin:0 auto;padding:0 32px;}
+    .gallery .eyebrow{
+      font-family:var(--font-mono, monospace);font-size:12.5px;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--ink-2, #910411);
+      display:flex;align-items:center;gap:10px;margin:0 0 18px;
+    }
+    .gallery .eyebrow::before{content:"";width:22px;height:1px;background:var(--ink-2, #910411);display:inline-block;}
+    .gallery .section-head h2{
+      font-family:var(--font-display, inherit);font-weight:600;letter-spacing:-.01em;
+      font-size:clamp(28px,3.4vw,42px);line-height:1.12;max-width:640px;margin:0;
+    }
+    .gallery .section-head p{
+      max-width:560px;font-size:15px;line-height:1.6;
+      color:var(--text-onpaper-soft, #5C6172);margin:14px 0 0;
+    }
+
+    .gallery .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+      gap:20px;
+      margin-top:44px;
+    }
+    .gallery .gallery-item{
+      position:relative;
+      aspect-ratio:4/3;
+      overflow:hidden;
+      border-radius:6px;
+      background:var(--paper-2, #F2E9D6);
+      border:1px solid var(--line-onpaper, rgba(27,36,54,0.14));
+    }
+    .gallery .gallery-item img{
+      position:absolute;inset:0;
+      width:100%;height:100%;object-fit:cover;display:block;
+      transition:transform .4s ease;
+    }
+    .gallery .gallery-item:hover img{transform:scale(1.06);}
+    .gallery .gallery-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(15,23,42,0) 45%, rgba(15,23,42,.78) 100%);
+      display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+      padding:14px;opacity:0;transition:opacity .25s ease;
+    }
+    .gallery .gallery-item:hover .gallery-overlay,
+    .gallery .gallery-item:focus-within .gallery-overlay{opacity:1;}
+    .gallery .gallery-caption{
+      font-family:var(--font-mono, monospace);font-size:11.5px;color:#FFFFFF;
+      letter-spacing:.03em;line-height:1.4;max-width:70%;
+    }
+    .gallery .gallery-download{
+      width:38px;height:38px;border-radius:50%;flex:none;
+      background:var(--ink-2, #910411);color:#FFFFFF;
+      display:flex;align-items:center;justify-content:center;
+      font-size:15px;
+      transition:background .2s ease, transform .2s ease;
+    }
+    .gallery .gallery-download:hover{background:var(--ink, #c70219);transform:translateY(-2px);color:#FFFFFF;}
+    .gallery .gallery-item-empty{display:flex;align-items:center;justify-content:center;}
+    .gallery .gallery-placeholder{
+      display:flex;flex-direction:column;align-items:center;gap:8px;
+      color:var(--text-onpaper-soft, #5C6172);font-family:var(--font-mono, monospace);
+      font-size:11.5px;text-align:center;letter-spacing:.04em;text-transform:uppercase;
+    }
+    .gallery .gallery-placeholder svg{width:26px;height:26px;opacity:.4;}
+    .gallery .gallery-actions{margin-top:36px;text-align:center;}
+    .gallery .gallery-btn{
+      display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+      font-family:var(--font-mono, monospace);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+      padding:14px 26px;border-radius:2px;
+      background:transparent;border:1px solid var(--line-onpaper, rgba(27,36,54,0.14));
+      color:var(--text-onpaper, #1B2436);
+      transition:border-color .18s ease, transform .18s ease;
+    }
+    .gallery .gallery-btn:hover{border-color:var(--text-onpaper, #1B2436);transform:translateY(-2px);}
+
+    @media (hover:none){
+      .gallery .gallery-overlay{opacity:1;background:linear-gradient(180deg, rgba(15,23,42,0) 55%, rgba(15,23,42,.7) 100%);}
+    }
+    @media (max-width:560px){
+      .gallery .gallery-grid{grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:12px;}
+      .gallery .gallery-download{width:32px;height:32px;}
+      .gallery .gallery-caption{font-size:10.5px;}
+    }
